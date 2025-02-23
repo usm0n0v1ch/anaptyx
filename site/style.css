@@ -1,0 +1,153 @@
+body {
+    background: black;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+
+}
+section {
+    padding: 50px 100px;
+}
+
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logotip{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+}
+.number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; 
+    border: 1px solid gold;
+    padding: 20px;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease; 
+}
+
+.number::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; 
+    width: 100%;
+    height: 100%;
+    background: gold;
+    transition: left 0.5s ease-in-out; 
+    z-index: -1; 
+}
+
+.number:hover {
+    color: black; 
+}
+
+.number:hover::before {
+    left: 0; 
+}
+
+
+.logoImg{
+    width: 200px;
+    height: 200px;
+    transition: all 0.3s ease;
+}
+.logoImg:hover {
+    transform: scale(1.1);
+    cursor:pointer;
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.slogan{
+    font-size: 40px;
+}
+
+.form{
+    padding: 0px 200px;
+    
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+input{
+    padding: 10px;
+    background: black;
+    color: white;
+    border:2px solid white;
+    outline:none;
+}
+input:focus {
+    border:3px solid gold;
+    border-color: gold  ;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden; /* Скрываем выход анимации за границы */
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white; /* Изначальный цвет текста */
+    background: transparent;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.1s ease; /* Добавлен transition для нажатия */
+    border-radius: 5px; /* Закругление углов */
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%; /* Фон начинается за пределами кнопки */
+    width: 100%;
+    height: 100%;
+    background: gold;
+    transition: left 0.3s ease-in-out; /* Анимация движения слева направо */
+    z-index: -1; /* Фон под текстом */
+}
+
+button:hover {
+    color: black; /* Изменяем цвет текста */
+}
+
+button:hover::before {
+    left: 0; /* Двигаем фон слева направо */
+}
+
+/* 🔥 Анимация нажатия */
+button:active {
+    transform: scale(0.95); /* Уменьшаем кнопку при нажатии */
+}
+
+.error {
+    border: 2px solid red !important; /* Красный бордер */
+    transition: 0.3s ease-in-out; /* Плавный эффект */
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+
+}
